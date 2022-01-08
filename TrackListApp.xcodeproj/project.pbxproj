@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		08C73F572789C04300EC69C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C73F562789C04300EC69C4 /* AppDelegate.swift */; };
 		08C73F592789C04300EC69C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C73F582789C04300EC69C4 /* SceneDelegate.swift */; };
-		08C73F5B2789C04300EC69C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C73F5A2789C04300EC69C4 /* ViewController.swift */; };
 		08C73F5E2789C04300EC69C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08C73F5C2789C04300EC69C4 /* Main.storyboard */; };
 		08C73F602789C04500EC69C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C73F5F2789C04500EC69C4 /* Assets.xcassets */; };
 		08C73F632789C04500EC69C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08C73F612789C04500EC69C4 /* LaunchScreen.storyboard */; };
+		08C73F6F2789C86200EC69C4 /* TrackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C73F6E2789C86200EC69C4 /* TrackListViewController.swift */; };
+		08C73F722789C9B800EC69C4 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C73F712789C9B800EC69C4 /* Track.swift */; };
+		08C73F742789DBC500EC69C4 /* TrackDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C73F732789DBC500EC69C4 /* TrackDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		08C73F532789C04300EC69C4 /* TrackListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C73F562789C04300EC69C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08C73F582789C04300EC69C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		08C73F5A2789C04300EC69C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		08C73F5D2789C04300EC69C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		08C73F5F2789C04500EC69C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08C73F622789C04500EC69C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08C73F642789C04500EC69C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08C73F6E2789C86200EC69C4 /* TrackListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListViewController.swift; sourceTree = "<group>"; };
+		08C73F712789C9B800EC69C4 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		08C73F732789DBC500EC69C4 /* TrackDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,57 @@
 		08C73F552789C04300EC69C4 /* TrackListApp */ = {
 			isa = PBXGroup;
 			children = (
-				08C73F562789C04300EC69C4 /* AppDelegate.swift */,
-				08C73F582789C04300EC69C4 /* SceneDelegate.swift */,
-				08C73F5A2789C04300EC69C4 /* ViewController.swift */,
-				08C73F5C2789C04300EC69C4 /* Main.storyboard */,
-				08C73F5F2789C04500EC69C4 /* Assets.xcassets */,
-				08C73F612789C04500EC69C4 /* LaunchScreen.storyboard */,
-				08C73F642789C04500EC69C4 /* Info.plist */,
+				08C73F6B2789C0A000EC69C4 /* App */,
+				08C73F6D2789C0B600EC69C4 /* StoryBoards */,
+				08C73F6A2789C09500EC69C4 /* ViewControllers */,
+				08C73F702789C99C00EC69C4 /* Model */,
+				08C73F6C2789C0A700EC69C4 /* Resources */,
 			);
 			path = TrackListApp;
+			sourceTree = "<group>";
+		};
+		08C73F6A2789C09500EC69C4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				08C73F6E2789C86200EC69C4 /* TrackListViewController.swift */,
+				08C73F732789DBC500EC69C4 /* TrackDetailsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		08C73F6B2789C0A000EC69C4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				08C73F562789C04300EC69C4 /* AppDelegate.swift */,
+				08C73F582789C04300EC69C4 /* SceneDelegate.swift */,
+				08C73F642789C04500EC69C4 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		08C73F6C2789C0A700EC69C4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				08C73F5F2789C04500EC69C4 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		08C73F6D2789C0B600EC69C4 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				08C73F5C2789C04300EC69C4 /* Main.storyboard */,
+				08C73F612789C04500EC69C4 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		08C73F702789C99C00EC69C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				08C73F712789C9B800EC69C4 /* Track.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08C73F5B2789C04300EC69C4 /* ViewController.swift in Sources */,
 				08C73F572789C04300EC69C4 /* AppDelegate.swift in Sources */,
 				08C73F592789C04300EC69C4 /* SceneDelegate.swift in Sources */,
+				08C73F742789DBC500EC69C4 /* TrackDetailsViewController.swift in Sources */,
+				08C73F6F2789C86200EC69C4 /* TrackListViewController.swift in Sources */,
+				08C73F722789C9B800EC69C4 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +339,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4HS4K74US2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TrackListApp/Info.plist;
+				INFOPLIST_FILE = TrackListApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -319,7 +367,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4HS4K74US2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TrackListApp/Info.plist;
+				INFOPLIST_FILE = TrackListApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
