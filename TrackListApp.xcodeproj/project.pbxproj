@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0886BB8527D6531C006CAAB4 /* TrackDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0886BB8427D6531C006CAAB4 /* TrackDetailsViewModel.swift */; };
+		0886BB8727D6565E006CAAB4 /* TrackListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0886BB8627D6565E006CAAB4 /* TrackListViewModel.swift */; };
+		0886BB8A27D658A9006CAAB4 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0886BB8927D658A9006CAAB4 /* TrackCell.swift */; };
+		0886BB8C27D658CC006CAAB4 /* TrackListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0886BB8B27D658CC006CAAB4 /* TrackListCellViewModel.swift */; };
 		08C73F572789C04300EC69C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C73F562789C04300EC69C4 /* AppDelegate.swift */; };
 		08C73F592789C04300EC69C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C73F582789C04300EC69C4 /* SceneDelegate.swift */; };
 		08C73F5E2789C04300EC69C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08C73F5C2789C04300EC69C4 /* Main.storyboard */; };
@@ -18,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0886BB8427D6531C006CAAB4 /* TrackDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailsViewModel.swift; sourceTree = "<group>"; };
+		0886BB8627D6565E006CAAB4 /* TrackListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListViewModel.swift; sourceTree = "<group>"; };
+		0886BB8927D658A9006CAAB4 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		0886BB8B27D658CC006CAAB4 /* TrackListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListCellViewModel.swift; sourceTree = "<group>"; };
 		08C73F532789C04300EC69C4 /* TrackListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C73F562789C04300EC69C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08C73F582789C04300EC69C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +49,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0886BB8227D652E9006CAAB4 /* TrackList */ = {
+			isa = PBXGroup;
+			children = (
+				0886BB8827D6588E006CAAB4 /* TrackListCell */,
+				08C73F6E2789C86200EC69C4 /* TrackListViewController.swift */,
+				0886BB8627D6565E006CAAB4 /* TrackListViewModel.swift */,
+			);
+			path = TrackList;
+			sourceTree = "<group>";
+		};
+		0886BB8327D652F0006CAAB4 /* TrackDetails */ = {
+			isa = PBXGroup;
+			children = (
+				08C73F732789DBC500EC69C4 /* TrackDetailsViewController.swift */,
+				0886BB8427D6531C006CAAB4 /* TrackDetailsViewModel.swift */,
+			);
+			path = TrackDetails;
+			sourceTree = "<group>";
+		};
+		0886BB8827D6588E006CAAB4 /* TrackListCell */ = {
+			isa = PBXGroup;
+			children = (
+				0886BB8927D658A9006CAAB4 /* TrackCell.swift */,
+				0886BB8B27D658CC006CAAB4 /* TrackListCellViewModel.swift */,
+			);
+			path = TrackListCell;
+			sourceTree = "<group>";
+		};
 		08C73F4A2789C04300EC69C4 = {
 			isa = PBXGroup;
 			children = (
@@ -72,8 +108,8 @@
 		08C73F6A2789C09500EC69C4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				08C73F6E2789C86200EC69C4 /* TrackListViewController.swift */,
-				08C73F732789DBC500EC69C4 /* TrackDetailsViewController.swift */,
+				0886BB8327D652F0006CAAB4 /* TrackDetails */,
+				0886BB8227D652E9006CAAB4 /* TrackList */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -184,11 +220,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0886BB8727D6565E006CAAB4 /* TrackListViewModel.swift in Sources */,
 				08C73F572789C04300EC69C4 /* AppDelegate.swift in Sources */,
 				08C73F592789C04300EC69C4 /* SceneDelegate.swift in Sources */,
 				08C73F742789DBC500EC69C4 /* TrackDetailsViewController.swift in Sources */,
+				0886BB8527D6531C006CAAB4 /* TrackDetailsViewModel.swift in Sources */,
+				0886BB8C27D658CC006CAAB4 /* TrackListCellViewModel.swift in Sources */,
 				08C73F6F2789C86200EC69C4 /* TrackListViewController.swift in Sources */,
 				08C73F722789C9B800EC69C4 /* Track.swift in Sources */,
+				0886BB8A27D658A9006CAAB4 /* TrackCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

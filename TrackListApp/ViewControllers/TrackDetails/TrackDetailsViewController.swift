@@ -13,13 +13,15 @@ class TrackDetailsViewController: UIViewController {
     @IBOutlet weak var trackNameLabel: UILabel!
     
     var track: Track!
+    var viewModel: TrackDetailsViewModelProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        coverImageView.image = UIImage(named: track.artist)
-        trackNameLabel.text = track.title
+        createForm()
     }
     
-    
-
+    private func createForm() {
+        coverImageView.image = viewModel.trackImage
+        trackNameLabel.text = viewModel.trackName
+    }
 }

@@ -9,31 +9,30 @@ import UIKit
 
 class TrackListViewController: UITableViewController {
 
-    private var trackList = Track.getTrackList()
+    private var viewModel: TrackListViewModelProtocol! {
+        didSet {
+            viewModel.fetchTracks {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewModel = TrackListViewModel()
         tableView.rowHeight = 80
         navigationItem.leftBarButtonItem = editButtonItem
     }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return trackList.count
+        viewModel.numberOfRows()
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "trackID", for: indexPath)
-        var content = cell.defaultContentConfiguration()
-        let track = trackList[indexPath.row]
-        
-        content.text = track.song
-        content.secondaryText = track.artist
-        content.image = UIImage(named: track.artist)
-        content.imageProperties.cornerRadius = tableView.rowHeight / 2
-        cell.contentConfiguration = content
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TrackTableViewCell
+        cell.viewModel = viewModel.cellViewModel(at: indexPath)
         
         return cell
     }
@@ -47,16 +46,20 @@ class TrackListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let currentTrack = trackList.remove(at: sourceIndexPath.row)
-        trackList.insert(currentTrack, at: destinationIndexPath.row)
+        let currentTrack = viewModel.trackList.remove(at: sourceIndexPath.row)
+        viewModel.trackList.insert(currentTrack, at: destinationIndexPath.row)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let detailsViewModel = viewModel.detailsViewModel(at: indexPath)
+        performSegue(withIdentifier: "trackDetails", sender: detailsViewModel)
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailsVC = segue.destination as? TrackDetailsViewController else { return }
-        guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        let track = trackList[indexPath.row]
-        detailsVC.track = track
+        detailsVC.viewModel = sender as? TrackDetailsViewModelProtocol
     }
   
 
